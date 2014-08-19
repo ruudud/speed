@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <title>Project Speed</title>
   </head>
   <style>
     html {
@@ -30,8 +31,10 @@
     </section>
     <script type="text/javascript" src="//bernii.github.io/gauge.js/dist/gauge.min.js"></script>
     <script>
+      var vParam = window.location.search.match(/\?v=([0-9]+)/);
+      var requestedSpeed = vParam && vParam[1];
       var MAX = 100;
-      var CURRENT = 33;
+      var CURRENT = requestedSpeed || 33;
 
       var $gauge = document.getElementById('gauge');
 
